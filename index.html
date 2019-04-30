@@ -180,22 +180,23 @@
       </div>
     </footer>
     <script>
-        //Dragg images
-        $(function() {
-          $( "#sortable" ).sortable({
-            revert: true
-        });
-        $( "#draggable" ).draggable({
-          connectToSortable: "#sortable",
-          helper: "clone",
-          revert: "invalid"
-        });
-        $( ".ui-state-default" ).disableSelection();
-        
-        //Count cards
+      //Dragg images
+      $(function() {
+        $( "#sortable" ).sortable({
+          revert: true
+      });
+      $( "#draggable" ).draggable({
+        connectToSortable: "#sortable",
+        helper: "clone",
+        revert: "invalid"
+      });
+      $( ".ui-state-default" ).disableSelection();
+      
+      //Function count cards
+      function updateCounter() {
         var n = $( ".card" ).length;
-          $( "span.badge" ).text(n);
-        });
+        $( "span.badge" ).text(n);
+      }
 
         //Back to top
       $('#return-to-top').click(function() {
