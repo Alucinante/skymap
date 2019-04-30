@@ -71,7 +71,7 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary card_delete">Delete</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary card-delete">Delete</button>
                 </div>
               </div>
             </div>
@@ -85,7 +85,7 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary card_delete">Delete</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary card-delete">Delete</button>
                 </div>
               </div>
             </div>
@@ -99,7 +99,7 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary card_delete">Delete</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary card-delete">Delete</button>
                 </div>
               </div>
             </div>
@@ -113,7 +113,7 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary card_delete">Delete</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary card-delete">Delete</button>
                 </div>
               </div>
             </div>
@@ -127,7 +127,7 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary card_delete">Delete</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary card-delete">Delete</button>
                 </div>
               </div>
             </div>
@@ -141,25 +141,25 @@
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary card_delete">Delete</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary card-delete">Delete</button>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <button type="button" id="add_item" class="btn btn-primary mb-4">
+      <button type="button" id="add-item" class="btn btn-primary mb-4">
         Add new item
       </button>
     </div>
-    <div class="container">
+    <div id="card-form" class="container">
       <div class="row">
         <div class="col-md-6">
                   <h3>Form</h3>
           <form>
             <div class="form-group">
                 <label for="description">Description:</label>
-                <textarea class="form-control" id="card_description" rows="3"></textarea>
+                <textarea maxlength="300" class="form-control" id="card_description" rows="3"></textarea>
               </div>
               <div class="form-group">
                 <label for="image">URL image:</label>
@@ -180,60 +180,57 @@
       </div>
     </footer>
     <script>
-      //Dragg images
-      $(function() {
-        $( "#sortable" ).sortable({
-          revert: true
-      });
-      $( "#draggable" ).draggable({
-        connectToSortable: "#sortable",
-        helper: "clone",
-        revert: "invalid"
-      });
-      $( ".ui-state-default" ).disableSelection();
-      
       //Function count cards
       function updateCounter() {
         var n = $( ".card" ).length;
         $( "span.badge" ).text(n);
       }
-
-        //Back to top
-      $('#return-to-top').click(function() {
-        $('body,html').animate({
-            scrollTop : 0
-          }, 500);
-      });
-
-      //Delete image
-      $('.card_delete').click(function(){
-        var $target = $(this).parents('.card');
-        var n = $( ".card" ).length;
-        $target.hide('slow', function(){ 
-            $target.remove();
-        });
-        $( "span.badge" ).text(n);
-        
-      });
-
       //Create card element and append
       function create_and_append_new_block(image,description) {
         var template = '<div class="col-md-4 ui-state-default"><div class="card mb-4 box-shadow"><img class="card-img-top" src="'+image+'" alt=""><div class="card-body"><p class="card-text">'+description+'</p></div></div></div>';
         $('.main-container').append(template);
       }
-
-      //Click on submit button
       $(function() {
+        // Hide/Show form
+        $('#card-form').hide();
+        $("#add-item").click(function(){
+          $("#card-form").show();
+        });
+        // Dragg images
+        $( "#sortable" ).sortable({
+          revert: true
+        });
+        $( "#draggable" ).draggable({
+          connectToSortable: "#sortable",
+          helper: "clone",
+          revert: "invalid"
+        });
+        $( ".ui-state-default" ).disableSelection();
+        // Back to top
+        $('#return-to-top').click(function() {
+          $('body,html').animate({
+              scrollTop : 0
+            }, 500);
+        });
+        // Delete image
+        $('.card-delete').click(function(){
+          var $target = $(this).parents('.card');
+          $target.hide('slow', function(){
+              $target.remove();
+              updateCounter();
+          });
+        });
+        // Click on submit button
         $("button.submit").click(function(e) {
           var description = $('#card_description').val();
           var image = $('#card_image').val();
-          console.log(description);
-          console.log(image);
           create_and_append_new_block(image,description);
           e.preventDefault();
+          updateCounter();
         });
+        // Initialize counter
+        updateCounter();
       });
-
 
     </script>
 </body>
