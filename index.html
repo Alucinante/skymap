@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sky Map</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.css">
+  <link rel="stylesheet" type="text/css" href="css/album.css">
+  <script
+  src="https://code.jquery.com/jquery-3.4.0.min.js"
+  integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="
+  crossorigin="anonymous"></script>
+  <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <div class="collapse bg-dark" id="navbarHeader">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-4">
+            <h4 class="text-white">About</h4>
+            <p class="text-muted">Scientific, historical and cultural facts about space, galaxies, the planets and other objects in the solar system. Gallery highlights graphics and diagrams that illustrate more aspects of the the universe.</p>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-4">
+            <h4 class="text-white">Contact</h4>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white"><i class="fab fa-twitter-square"></i> Twitter</a></li>
+              <li><a href="#" class="text-white"><i class="fab fa-facebook"></i> Facebook</a></li>
+              <li><a href="#" class="text-white"><i class="fab fa-instagram"></i> Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar navbar-dark bg-dark box-shadow">
+      <div class="container d-flex justify-content-between">
+        <a href="#" class="navbar-brand d-flex align-items-center">
+          <i class="fas fa-globe-americas mr-2"></i> 
+          Sky Map
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <section class="jumbotron text-center">
+      <div class="container">
+        <h1 class="jumbotron-heading">Sky Map</h1>
+        <p class="lead text-muted">Scientific, historical and cultural facts about space, galaxies, the planets and other objects in the solar system. Gallery highlights graphics and diagrams that illustrate more aspects of the the universe.</p>
+      </div>
+    </section>
+  <section class="album py-5 bg-light">
+    <div class="container">
+      <p class="text-right">
+        <button type="button" class="btn btn-primary">
+          Items display: <span class="badge badge-light"></span>
+        </button>
+      </p>
+      <div id="sortable" class="main-container row">
+        <div class="col-md-4 ui-state-default">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/andromeda-galaxy.jpg" alt="Andromeda Galaxy">
+            <div class="card-body">
+              <p class="card-text">The Andromeda Galaxy (M31) is the closest large galaxy to the Milky Way and is one of a few galaxies that can be seen. </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary card_delete">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 ui-state-default">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/antennae-galaxies.jpg" alt="Antennae Galaxy">
+            <div class="card-body">
+              <p class="card-text">The Antennae is a pair of spiral galaxies that are interacting and mingling their stars. They began their galactic dance.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary card_delete">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 ui-state-default">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/milky-way.jpg" alt="Milky Way Galaxy">
+            <div class="card-body">
+              <p class="card-text">The Milky Way Galaxy is our home galaxy in the universe. It is a fairly typical barred spiral with four major arms in its disk.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary card_delete">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 ui-state-default">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/m87.jpg" alt="M87">
+            <div class="card-body">
+              <p class="card-text">The massive galaxy M87 is the most spectacular example of an elliptical galaxy we can see from Earth.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary card_delete">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 ui-state-default">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/whirlpool-galaxy.jpg" alt="whirlpool galaxy">
+            <div class="card-body">
+              <p class="card-text">The Whirlpool Galaxy is a familiar one to stargazers and among the many close galaxy neighbors to our own Milky Way.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary card_delete">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 ui-state-default">
+          <div class="card mb-4 box-shadow">
+            <img class="card-img-top" src="images/sombrero-galaxy.jpg" alt="sombrero galaxy">
+            <div class="card-body">
+              <p class="card-text">The Sombrero Galaxy is one of the most unusual looking barred spiral galaxies visible from Earth.</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary card_delete">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="button" id="add_item" class="btn btn-primary mb-4">
+        Add new item
+      </button>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+                  <h3>Form</h3>
+          <form>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea class="form-control" id="card_description" rows="3"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="image">URL image:</label>
+                <input type="text" class="form-control-file" id="card_image">
+              </div>
+              <button type="submit" class="btn btn-primary submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#" id="return-to-top"><i class="fas fa-chevron-circle-up"></i> Back to top</a>
+        </p>
+        <p>Content on this site is licensed under a <a class="subfoot" href="https://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 International license</a>.</p>
+      </div>
+    </footer>
+    <script>
+        //Dragg images
+        $(function() {
+          $( "#sortable" ).sortable({
+            revert: true
+        });
+        $( "#draggable" ).draggable({
+          connectToSortable: "#sortable",
+          helper: "clone",
+          revert: "invalid"
+        });
+        $( ".ui-state-default" ).disableSelection();
+        
+        //Count cards
+        var n = $( ".card" ).length;
+          $( "span.badge" ).text(n);
+        });
+
+        //Back to top
+      $('#return-to-top').click(function() {
+        $('body,html').animate({
+            scrollTop : 0
+          }, 500);
+      });
+
+      //Delete image
+      $('.card_delete').click(function(){
+        var $target = $(this).parents('.card');
+        var n = $( ".card" ).length;
+        $target.hide('slow', function(){ 
+            $target.remove();
+        });
+        $( "span.badge" ).text(n);
+        
+      });
+
+      //Create card element and append
+      function create_and_append_new_block(image,description) {
+        var template = '<div class="card mb-4 box-shadow"><img class="card-img-top" src="'+image+'" alt=""><div class="card-body"><p class="card-text">'+description+'</p></div></div>';
+        $('.main-container').append(template);
+      }
+
+      //Click on submit button
+      $(function() {
+        $("button.submit").click(function() {
+          var description = $('#card_description').val();
+          var image = $('#card_image').val();
+          console.log(description);
+          console.log(image);
+          create_and_append_new_block(image,description);
+          e.preventDefault();
+        });
+      });
+
+
+    </script>
+</body>
+</html>
